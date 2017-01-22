@@ -1,0 +1,411 @@
+/*
+
+Theme Name: TZ1
+
+Author: 
+
+Description: The 2016 simplest theme for WordPress.
+
+Version: 1.0 License: GNU General Public License v2 or later License
+
+URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+Tags: test
+
+Text Domain: test1.ru
+
+This theme, like WordPress, is licensed under the GPL.
+
+Use it to make something cool, have fun, and share what you've learned with others.
+
+html{
+    height: 100%;
+}
+
+
+body{
+  
+   
+    height: 100%;
+    display: block;
+    
+}
+
+
+/*video2*/
+#video_bg {
+    /* Щоб відеофон займав весь екран */
+    position: fixed;
+    top: 0;
+    left: 0;
+    /* Розміщуємо фон "знизу", першою обгорткою.
+    Для цього використовуємо від"ємний z-index. */
+    z-index: -1000;
+    /* Розтягуємо відео так, щоб не було видно чорних смуг і
+    щоб незалежно від роздільної здатності екрану відеофон займав весь робочий простір. */
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+}
+
+/*центрування відео на менших екранах*/
+@media (min-aspect-ratio: 16/9) { 
+    #video_bg {
+        height: 300%;
+        top: -100%;
+    }
+}
+ 
+@media (max-aspect-ratio: 16/9) {
+    #video_bg {
+        width: 300%;
+        left: -100%;
+    }
+}
+ 
+@supports (object-fit: cover) {
+    #video_bg {
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}      
+/* кінець центрування відео на менших екранах*/                            /*video2*/
+
+
+.jumbotron { 
+   
+   color: #ffffff;
+    padding: 270px;  /*відступи - перше значення - верх/низ,  друге - вліво/вправо*/
+    background: url('/wp-content/uploads/2016/11/waves.jpg') 100% 100%  no-repeat fixed;
+     /* url('/wp-content/uploads/2016/11/waves5.jpg') 100% 100% no-repeat fixed,
+        url('/wp-content/uploads/2016/11/bg21.png') 100% 100% no-repeat fixed,
+        url('/wp-content/uploads/2016/11/bg11.png') 100% 100% no-repeat fixed, */
+         background-size:  cover; 
+          min-width: 100%;
+         min-height: 100%;
+         width: auto;
+         height: auto;     
+         top: 0;
+         left: 0;        
+         transition-property: background;
+         transition-duration: 10s;
+         transition-timing-function: linear ease-in-out; 
+         animation-iteration-count: infinite; /*Безкінечно*/ 
+         /*animation: move 10s infinite; */
+         animation-name:'movement';
+	 
+     
+   }
+
+
+.jumbotron:hover {
+  background: url('/wp-content/uploads/2016/11/waves5.jpg') 100% 100% no-repeat fixed;
+   background-size:  cover;   
+   animation-iteration-count: infinite; /*Безкінечно*/
+   transition-property: background;
+   transition-duration: 10s;
+   transition-timing-function: linear ease-in-out;
+   
+
+}
+
+
+ @keyframes 'movement' {
+   from { background-position:    0px; }
+     to { background-position: -270px; }
+}
+
+@keyframes 'movement' {
+  0%   { opacity: 0; }
+  100% { opacity: 1; }
+}
+  
+  
+
+.jumbotron .container {
+   
+    font-family: 'Monoton', cursive;
+    margin: 0;
+   display: block;
+   justify-content: center;
+   align-items: center; 
+
+
+ /*мигаючі букви*/
+  padding: 10px;
+  font-size: 75px;
+  font-family: 'Monoton', cursive;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 0 0 80px red,0 0 30px FireBrick,0 0 6px DarkRed;
+  color: red;   
+          
+   }
+
+
+.jumbotron .container p {
+  margin:0;
+  font-family: 'Monoton', cursive;
+  }
+#ITmoms:hover { text-shadow: 0 0 200px #ffffff,0 0 80px #008000,0 0 6px #0000ff; }
+#studio:hover { text-shadow: 0 0 100px red,0 0 40px FireBrick,0 0 8px DarkRed; }
+#ITmoms {
+  color: #fff;
+  text-shadow: 0 0 80px #ffffff,0 0 30px #008000,0 0 6px #0000ff;
+}
+#ITmoms span {
+  animation: upper 11s linear infinite;
+  font-size: 40px;
+}
+#studio span:nth-of-type(2) {
+  animation: lower 15s linear infinite;
+}
+#studio span:nth-of-type(1) {
+  text-shadow: none;
+  opacity:.4;
+}
+@keyframes upper {
+  0%,19.999%,22%,62.999%,64%, 64.999%,70%,100% {
+    opacity:.99; text-shadow: none;
+  }
+  20%,21.999%,63%,63.999%,65%,69.999% {
+    opacity:0.4; text-shadow: none; 
+  }
+}
+@keyframes lower {
+  0%,12%,18.999%,23%,31.999%,37%,44.999%,46%,49.999%,51%,58.999%,61%,68.999%,71%,85.999%,96%,100% {
+    opacity:0.99; text-shadow: none;
+  }
+  19%,22.99%,32%,36.999%,45%,45.999%,50%,50.99%,59%,60.999%,69%,70.999%,86%,95.999% { 
+    opacity:0.4; text-shadow: none; 
+  }
+}
+
+
+/*кінець стилів для мигаючих букв*/
+
+
+
+
+
+
+.bg-grey {
+    background-color: #f6f6f6;  /*сірий фон*/
+    
+}
+
+
+
+.container-fluid {
+    padding: 60px 50px;
+    
+
+}
+
+
+.logo {
+    font-size: 200px;
+    color: #5C9EE4; /* синій */
+   
+}
+
+.logo-small {
+    color: #5C9EE4; /* синій */
+    font-size: 50px;
+}
+
+@media screen and (max-width: 768px) {
+    .col-sm-4, .col-md-4 col-sm-6 {
+        text-align: center;
+        margin: 25px 0;
+    }
+}
+   /*до наших "фото"*/
+.person {
+    border: 5px solid transparent;
+    margin-bottom: 20px;
+    
+    width: 70%;
+    height: 70%;
+    
+      
+}
+
+
+.person:hover {
+    border-color: #f1f1f1;
+}
+
+ 
+/*до портфоліо*/
+
+
+.thumbnail {
+    padding: 0 0 15px 0; /*забираємо ефект маленької картинки - рамку*/
+    border: none;
+    border-radius: 0; 
+    transition: 0.9s ease-out; /* Перехід */   
+}
+
+
+
+.thumbnail:hover {
+/*transform: rotate(-5deg); нахил/поворот*/
+border: 1px solid grey;
+transform: scale(1.05) !important; /*збільшує*/
+}
+
+
+.thumbnail img {
+    width: 100%; /*вирівняло всі картинки, вже не "стрибають"*/
+    height: 210px;
+    margin-bottom: 10px;
+}
+
+/*стилі для каруселі*/
+
+
+
+.carousel-control.right, .carousel-control.left {
+    /*background-image: none; ЧИ ХАЙ БУДЕ?....ЗАБЕРЕ СІРИЙ ФОН*/
+    color: #5C9EE4; /* синій */
+}
+
+.carousel-indicators li {
+    border-color: #5C9EE4; /* синій */
+   
+}
+
+.carousel-indicators li.active {
+     background-color: #5C9EE4; /* синій */
+}
+
+.item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+    
+}
+
+.item span {
+    font-style: normal;
+
+/*carousel-inner, #myCarousel {
+   background-image: url('/wp-content/uploads/2016/11/bg-2.jpg'); ФОН  - КЛАС ДОДАТИ, АБО КОНТЕЙНЕР*/
+}
+
+/*кінець стилів для каруселі*/
+
+
+/*СТИЛІ ДЛЯ ХІДЕРУ*/
+
+/* ТЕМНИЙ ФОН З НЕВЕЛИКОЮ ПРОЗОРІСТЮ */ 
+.navbar {
+    margin-bottom: 0;
+    background-color: #444;
+    border: 0;
+    font-size: 13px !important;
+    letter-spacing: 4px;
+    opacity:0.85;
+    border-radius: 0; 
+    flex: 0 0 auto;  /*необов"язково*/
+    
+}
+
+/* СІРИЙ КОЛІР ДО ВСІХ ЛІНКІВ НАВБАРУ */
+.navbar li a, .navbar .navbar-brand { 
+    color: #d5d5d5 !important;
+}
+
+/* ХОВЕР - ЛІНКИ БІЛІ СТАЮТЬ */
+.navbar-nav li a:hover {
+    color: #fff !important;
+}
+
+/*  АКТИВНИЙ ЛІНК */
+.navbar-nav li.active a {
+    color: #fff !important;
+    background-color:#29292c !important;
+}
+
+/* Remove border color from the collapsible button  */
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+}
+
+/* дропдаун */
+.open .dropdown-toggle {
+    color: #fff ;
+    background-color: #555 !important; /*чуть світліший сірий, ніж навбар, коли навести мишку*/
+}
+
+/* дропдаун лінки */
+.dropdown-menu li a {
+    color: #000 !important;
+    text-align: left;
+}
+
+/* Ховер, дропдаун меню - колір фіолетовий */
+.dropdown-menu li a:hover {
+    background-color: #6600FF !important;
+    text-align: left;
+}
+
+
+.navbar-brand img{  /*до майбутнього малюнка лого*/
+  width: ;
+  height: ;
+}
+
+
+
+/*КІНЕЦЬ СТИЛІВ ДЛЯ ХІДЕРУ*/
+
+
+
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto 0px;
+  /* Pad bottom by footer height */
+  padding: 0 0 0px;
+}
+
+
+
+/*стилі для футеру*/
+
+footer, #footer {
+  
+    background-color: #444;
+    
+    font-size: 10px !important;
+    letter-spacing: 2px;
+    opacity:0.85;    
+    color: #f5f5f5;
+    text-align: center;
+    margin-top: 0;  
+    margin-bottom: 0;   
+    height: 60px;            
+    align-items: center; 
+   /* padding: 60px;*/
+    
+    
+}
+
+footer a {
+    color: #f5f5f5;
+}
+
+footer a:hover {
+    color: #777;
+    text-decoration: none;
+}
+/*КІНЕЦЬ СТИЛІВ ДЛЯ футеру*/
