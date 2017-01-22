@@ -68,17 +68,7 @@
       </div>    
     </div>
 
-    <div class="col-sm-4">
-      <h4><strong>Марта</strong></h4><br>
-      <a href="#Marta" data-toggle="collapse">
-      <img src="/wp-content/uploads/2016/11/marta1.jpg" class="img-circle person" alt="Marta">
-      </a>
-      <div id="Marta" class="collapse">
-        <p>Бек-енд</p>
-        <p>Хоббі: плавання й піші походи</p>
-        <p>якийсь текст</p>
-      </div>    
-    </div>
+    
 
     <div class="col-sm-4">
       <h4><strong>Таня</strong></h4><br>
