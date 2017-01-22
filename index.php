@@ -38,7 +38,7 @@
 <div class="jumbotron text-center"> 
  
   <div class="container"> 
-      <p id="ITmoms"><span>IT moms</span></p>
+      <p id="ITmoms"><span>IT moms dhhghghg</span></p>
   <p id="studio"><span></span><span>web studio</span></p>
   
   </div>
